@@ -61,7 +61,7 @@ const InputField = () => {
   function chatStripe(isAi, value, uniqueId) {
     return (
       `
-        <div class="${isAi && 'aiChat-bg-color'}">
+        <div class="${isAi && 'aiChat-bg-color'} w-full">
             <div class="chat flex flex-row gap-4 my-6">
                 <div class="profile flex items-center justify-center bg-indigo-800 rounded-md">
                     <img class='w-7'
@@ -131,7 +131,7 @@ const InputField = () => {
   }
   return (
     <div className='w-full  max-w-3xl fixed bottom-12'>
-      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12 w-full max-w-5xl mb-5'>
+      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12   mb-5'>
         <ECL />
       </div>
       <form action="" onSubmit={handleSubmit}>

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const ECL = () => (
-  <div  className='ecl-container flex flex-col gap-6 mb-12'>
+  <div  className='w-full ecl-container flex flex-col gap-6 mb-12'>
     <h1 className='text-4xl text-center mb-4 font-bold'>ChatGPT</h1>
     <div className='header-icons-cont flex text-center items-center justify-around'>
       {ECLIconCont.map((item, index) => (
