@@ -5,10 +5,20 @@ import '../main.css'
 import bot from '../assets/chatgpt-icon.png'
 import user from '../assets/user.svg'
 import ECL from './ECL.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+// import React, { useState } from 'react';
+
 
 const InputField = () => {
-  // const form = document.querySelector('form')
 
+  // Adjusting the height of textarea when text overflows
+  const adjustTextareaHeight = (event) => {
+    event.target.style.height = 'auto';
+    event.target.style.height = `${event.target.scrollHeight}px`;
+  };
+
+  // loading animation
   let loadInterval;
   function loader(element) {
     element.textContent = ''
@@ -117,19 +127,22 @@ const InputField = () => {
         messageDiv.innerHTML = 'Something went wrong';
         alert(err);
       }
-    }   
+    }
   }
   return (
     <div className='w-full  max-w-3xl fixed bottom-12'>
-      {/* <ECL /> */}
-      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12 w-full max-w-5xl'></div>
+      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12 w-full max-w-5xl mb-5'>
+        <ECL />
+      </div>
       <form action="" onSubmit={handleSubmit}>
-        <input className='input-field-bg-color w-full rounded-md p-3 focus:outline-none' id="my-input-id" placeholder='Send a message.' autoComplete='off' required='yes' autoFocus
-        ></input>
-        <button className='absolute right-3 mt-4' type="submit"><img src={sendButton} alt="send" /></button>
+        <textarea tabIndex={0} className='pr-12 resize-none input-field-bg-color w-full rounded-md p-3 focus:outline-none' id="my-input-id" placeholder='Send a message.' rows={1} autoComplete='off' required='yes' autoFocus
+          onInput={adjustTextareaHeight}></textarea>
+
+        <button className='absolute right-3 mt-3 mr-1 ' type="submit"><FontAwesomeIcon icon={faPaperPlane} /></button>
       </form>
     </div>
-    )
-  }
+  )
+}
 
 export default InputField
+

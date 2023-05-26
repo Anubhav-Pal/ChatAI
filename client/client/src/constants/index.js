@@ -11,20 +11,26 @@ import {
     sendButton
 } from '../assets/index.js'
 
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+
+
+
 export const ECLIconCont = [
     {
         id: "sun",
-        icon: sun,
+        icon: faSun,
         title: "Examples"
     },
     {
         id: "lightning",
-        icon: lightning,
+        icon: faBolt,
         title: "Capabilities"
     },
     {
         id: "Limitations",
-        icon: caution,
+        icon: faTriangleExclamation,
         title: "Limitations"
     }
 ]

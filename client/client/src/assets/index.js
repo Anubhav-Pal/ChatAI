@@ -7,7 +7,7 @@ import dots from './asset 6.svg'
 import sun from './asset 7.svg'
 import lightning from './asset 8.svg'
 import caution from './asset 9.svg'
-import sendButton from './asset 10.svg'
+import sendButton from './send.png'
 
 
 export{
