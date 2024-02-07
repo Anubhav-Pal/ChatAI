@@ -116,11 +116,10 @@ const InputField = () => {
       messageDiv.innerHTML = ' ';
 
       if (response.ok) {
-        const data = await response.json();
-        const parsedData = data.bot.trim(); // trims any trailing spaces/'\n'
+        const responseData = await response.json();
+        const data = responseData.bot;
 
-        typeText(messageDiv, parsedData);
-        console.log();
+        typeText(messageDiv, data);
       } else {
         const err = await response.text();
 
@@ -131,7 +130,7 @@ const InputField = () => {
   }
   return (
     <div className='w-full  max-w-3xl fixed bottom-12'>
-      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12   mb-5'>
+      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12  mb-5'>
         <ECL />
       </div>
       <form action="" onSubmit={handleSubmit}>
