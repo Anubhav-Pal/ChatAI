@@ -28,3 +28,17 @@
 .aiChat-bg-color{
     background-color: #444654;
 }
+
+textarea::-webkit-scrollbar {
+    width: 6px; /* Set the width of the scrollbar */
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners of the thumb */
+  }
+  
+  textarea::-webkit-scrollbar-track {
+    background-color: transparent; /* Color of the scrollbar track */
+  }
+  

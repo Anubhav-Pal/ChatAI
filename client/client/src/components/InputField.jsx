@@ -7,7 +7,6 @@ import user from '../assets/user.svg'
 import ECL from './ECL.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-// import React, { useState } from 'react';
 
 
 const InputField = () => {
@@ -45,7 +44,7 @@ const InputField = () => {
       } else {
         clearInterval(interval)
       }
-    }, 20)
+    }, 10)
   }
 
   // generate unique ID for each message div of bot
@@ -61,10 +60,10 @@ const InputField = () => {
   function chatStripe(isAi, value, uniqueId) {
     return (
       `
-        <div class="${isAi && 'aiChat-bg-color'} w-full">
-            <div class="chat flex flex-row gap-4 my-6">
-                <div class="profile flex items-center justify-center bg-indigo-800 rounded-md">
-                    <img class='w-7'
+        <div class="${isAi && 'aiChat-bg-color'} w-full rounded-md px-2 sm:px-4">
+            <div class="chat flex flex-row gap-2 my-6 items-start ">
+                <div class="profile flex items-center min-w-[30px] min-h-[24px] justify-center  ${!isAi && 'bg-indigo-800'}  rounded-md">
+                    <img class='w-6 h-6'
                       src=${isAi ? bot : user} 
                       alt="${isAi ? 'bot' : 'user'}" 
                     />
@@ -89,6 +88,7 @@ const InputField = () => {
 
     // to clear the textarea input
     inputField.value = '';
+    // inputField.style.height="10px"
 
     // bot's chatstripe
     const uniqueId = generateUniqueId();
@@ -129,16 +129,31 @@ const InputField = () => {
     }
   }
   return (
-    <div className='w-full  max-w-3xl fixed bottom-12'>
-      <div id="chat_container" className='absolute flex flex-col gap-8 bottom-12  mb-5'>
+    <div className='w-11/12 sm:w-2/3 flex flex-col justify-between gap-3 sm:gap-5' >
+      <div id="chat_container" className='flex flex-col gap-8'>
         <ECL />
       </div>
-      <form action="" onSubmit={handleSubmit}>
-        <textarea tabIndex={0} className='pr-12 resize-none input-field-bg-color w-full rounded-md p-3 focus:outline-none' id="my-input-id" placeholder='Send a message.' rows={1} autoComplete='off' required='yes' autoFocus
-          onInput={adjustTextareaHeight}></textarea>
+      <div className='mb-8 flex flex-col gap-2 justify-between'>
+        <form className="relative" onSubmit={handleSubmit}>
+          <textarea
+            tabIndex={0}
+            // className='resize-none input-field-bg-color w-full rounded-md p-3 focus:outline-none'
+            className='border border-gray-400 max-h-44 pr-10  focus:outline-none resize-none border-opacity-40 rounded-lg text-sm p-4 text-start text-white w-full bg-transparent flex items-center'
+            id="my-input-id"
+            placeholder='Send a message...'
+            rows={1}
+            autoComplete='off'
+            required='yes'
+            autoFocus
+            onInput={adjustTextareaHeight}
+          ></textarea>
+          <button className='absolute top-[2px] bottom-0 right-1 p-3' type="submit">
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
+        </form>
 
-        <button className='absolute right-3 mt-3 mr-1 ' type="submit"><FontAwesomeIcon icon={faPaperPlane} /></button>
-      </form>
+        <div className='text-center text-[10px] text-gray-300'>This application can make mistakes. Consider checking important information.</div>
+      </div>
     </div>
   )
 }

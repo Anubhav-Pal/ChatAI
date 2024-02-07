@@ -3,8 +3,7 @@ import LeftContainer from './LeftContainer'
 import RightContainer from './RightContainer'
 
 const MainContainer = () => (
-    <section className='main-container flex'>
-    {/* <LeftContainer/> */}
+    <section className='main-container'>
     <RightContainer/>
     </section>
 )

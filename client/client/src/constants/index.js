@@ -52,25 +52,17 @@ export const ECLPromptsCont = [
         id: "4",
         content: "Remembers what user said earlier in the conversation"
     },
+];
+
+
+export const ECLPromptsContsm = [
     {
-        id: "5",
-        content: "Allows user to provide follow-up corrections"
+        id: "1",
+        content: "Explain quantum computing in simple terms"
     },
     {
-        id: "6",
-        content: "Trained to decline inappropriate requests"
+        id: "2",
+        content: "Got any creative ideas for a 10 year old’s birthday?"
     },
-    {
-        id: "7",
-        content: "May occasionally generate incorrect information"
-    },
-    {
-        id: "8",
-        content: "May occasionally produce harmful instructions"
-    },
-    {
-        id: "9",
-        content: "Limited knowledge of the world and events after 2021"
-    }
 ];
 

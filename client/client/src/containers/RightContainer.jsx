@@ -3,7 +3,7 @@ import ECL from '../components/ECL'
 import InputField from '../components/InputField'
 
 const RightContainer = () => (
-  <div className='right-container flex flex-col flex-1 justify-center items-center bg-right-cont text-white min-h-screen'>
+  <div className='right-container sm:py-10 flex justify-center items-end sm:items-center bg-right-cont text-white min-h-screen'>
     <InputField />
   </div>
 )
