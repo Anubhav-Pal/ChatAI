@@ -152,7 +152,7 @@ const InputField = () => {
           </button>
         </form>
 
-        <div className='text-center text-[10px] text-gray-300'>This application can make mistakes. Consider checking important information.</div>
+        <div className='text-center text-[10px] text-gray-300'>Results might be delayed due to usage of free version of API.</div>
       </div>
     </div>
   )
