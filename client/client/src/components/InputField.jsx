@@ -103,7 +103,7 @@ const InputField = () => {
     if (messageDiv) {
       loader(messageDiv);
 
-      const response = await fetch('http://localhost:3000', {
+      const response = await fetch('https://chatainew.onrender.com/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
